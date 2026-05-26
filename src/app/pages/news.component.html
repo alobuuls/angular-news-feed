@@ -1,0 +1,48 @@
+<!-- <h1>News</h1>
+
+<h2 *ngIf="loading">
+  Loading...
+</h2>
+
+<h2 *ngIf="error">
+  {{ error }}
+</h2>
+
+<div *ngIf="!loading && news.length">
+  <ng-container *ngFor="let n of news">
+    <a [href]="n.url" target="_blank">
+      <h2>
+        {{ n.title }}
+      </h2>
+
+      <p>
+        {{ n.description }}
+      </p>
+
+      <img [src]="n.urlToImage" width="200">
+    </a>
+  </ng-container>
+</div> -->
+
+
+<div *ngIf="obs$ | async as news">
+  <h1 *ngIf="news.loading">Loading...</h1>
+
+  <h1 *ngIf="news.error">{{ news.error }}</h1>
+
+  <div *ngIf="!news.loading && !news.error">
+    <ng-container *ngFor="let n of news.data">
+      <a [href]="n.url" target="_blank">
+        <h2>
+          {{ n.title }}
+        </h2>
+
+        <p>
+          {{ n.description }}
+        </p>
+
+        <img [src]="n.urlToImage" width="200">
+      </a>
+    </ng-container>
+  </div>
+</div>
