@@ -1,27 +1,128 @@
-# News
+# 🚀 Angular News Feed
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+Aplicación desarrollada en **Angular 12** que consume una API de noticias y muestra artículos utilizando un patrón reactivo de estado con RxJS.
 
-## Development server
+Permite visualizar noticias en tiempo real manejando estados de carga, datos y errores de forma declarativa.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## ⚙️ Requisitos del sistema
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-## Build
+- 📦 **Node.js:** `v14.x` o `v16.x` *(preferiblemente `v24.13.0`)*
+- 📦 **npm:** `v6+`
+- 🅰️ **Angular CLI:** `v12.x`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🔍 Verificar versiones instaladas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecuta en la terminal:
 
-## Running end-to-end tests
+```bash
+node -v
+npm -v
+ng version
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🚀 Instalación del proyecto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1️⃣ Clonar el repositorio
+
+```bash
+git clone <URL_DEL_REPO>
+cd angular-news-feed
+```
+
+### 2️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Ejecutar el proyecto
+
+```bash
+ng serve
+```
+
+Luego abre en tu navegador:
+
+```bash
+http://localhost:4200/news
+```
+
+---
+
+## 🧠 Arquitectura del proyecto
+
+Este proyecto utiliza un patrón reactivo basado en estado para manejar peticiones HTTP.
+
+### 📦 NewsComponent
+
+Contiene la lógica principal de visualización de noticias:
+
+- Consumo de API de noticias
+- Manejo de estado *(loading / data / error)*
+- Suscripción reactiva con `async pipe`
+
+---
+
+## ⚙️ Funcionalidades principales
+
+- 📰 Consumo de API de noticias
+- ⚡ Estado reactivo *(loading / data / error)*
+- 🔄 Operador personalizado `withRequestState`
+- 🌐 Peticiones HTTP con headers de autenticación
+- 🎯 UI reactiva con `async pipe`
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- 🅰️ Angular 12
+- ⚡ TypeScript
+- 🔄 RxJS
+- 🌐 HttpClient
+- 📰 News API
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+src/
+├── app/
+│   ├── helper/
+│   │   └── utilities/
+│   │       └── with-loading-operator.ts
+│   ├── interfaces/
+│   │   └── news-api.interface.ts
+│   ├── pages/
+│   │   └── news.component.ts
+│   ├── services/
+│   │   └── news.service.ts
+│   ├── app.routes.ts
+│   └── app.module.ts
+```
+
+---
+
+## 🔥 Buenas prácticas implementadas
+
+- Separación de responsabilidades *(service / component / helper)*
+- Manejo de estado reactivo con RxJS
+- Uso de `async pipe`
+- Operador personalizado reutilizable
+- Código limpio y escalable
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso educativo y forma parte de un portafolio personal.
